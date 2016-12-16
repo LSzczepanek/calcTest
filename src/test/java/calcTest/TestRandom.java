@@ -21,36 +21,29 @@ public class TestRandom {
 	@Before
 	public void before(){
 		initMocks(this);
-		when(calc.random())
-	    .thenReturn(6)
-	    .thenReturn(0)
-	    .thenReturn(Integer.MAX_VALUE)
-	    .thenReturn(2312);
+
 	    
 	}
 	
 	
 	@Test
 	public void testRandomValueIsInt(){
-		Assert.assertEquals(Integer.class, calc.random());
+		Calc calc = new Calc();
+		Assert.assertTrue(calc.random() instanceof Integer);
 	}
 	
 	
 	@Test
 	public void testRandomValueIsInLowRange(){
-		
-		Assert.assertEquals(0, calc.random());
+		when(calc.random()).thenReturn(0);
+		Assert.assertSame(Integer.valueOf(0) , calc.random());
 	}
 	
 	@Test
 	public void testRandomValueIsInHighRange(){
-		
-		Assert.assertEquals(Integer.MAX_VALUE, calc.random());
+		when(calc.random()).thenReturn(Integer.MAX_VALUE);
+		Assert.assertEquals(Integer.valueOf(Integer.MAX_VALUE), calc.random());
 	}
 	
-	@Test
-	public void testRandomIsRandom(){
-		Assert.assertEquals(true, calc.random());
-		
-	}
+	
 }

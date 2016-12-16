@@ -1,5 +1,7 @@
 package calcTest;
 
+import java.util.Random;
+
 public class Calc {
 
 	public int add(int a, int b){
@@ -12,5 +14,11 @@ public class Calc {
 			throw new Exception();
 		}
 		return a / b;
+	}
+	
+	public Integer random(){
+		Random random = new Random();
+		return random.nextInt();
+		
 	}
 }
