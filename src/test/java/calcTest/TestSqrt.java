@@ -15,8 +15,8 @@ public class TestSqrt {
 	}
 	
 	@Test
-	public void testResultIsCorrect(){
-		Assert.assertEquals(2, calc.sqrt(4));
+	public void testResultIsCorrect() throws Exception{
+		Assert.assertEquals(Integer.valueOf(2), calc.sqrt(4));
 	}
 	
 	
@@ -26,19 +26,19 @@ public class TestSqrt {
 	}
 	
 	@Test
-	public void testSqrtZeroIsZero(){
-		Assert.assertEquals(0, calc.sqrt(0));
+	public void testSqrtZeroIsZero() throws Exception{
+		Assert.assertEquals(Integer.valueOf(0), calc.sqrt(0));
 	}
 	
 	@Test
-	public void testSqrtIsInteger(){
+	public void testSqrtIsInteger() throws Exception{
 		Assert.assertTrue(calc.sqrt(9.3) instanceof Integer);
 	}
 	
 	
 	@Test
-	public void testSqrtRoundValueDown(){
-		Assert.assertEquals(3, calc.sqrt(9.5));
+	public void testSqrtRoundValueDown() throws Exception{
+		Assert.assertEquals(Integer.valueOf(3), calc.sqrt(9.5));
 	}
 
 }
